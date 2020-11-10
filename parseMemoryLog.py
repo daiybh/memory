@@ -29,10 +29,15 @@ count+=1
 
 
 f=open('out.csv','w')
-print(dlastList)
+
+
+for i in range(8+1):
+    print('rec{}'.format(i),end=',',file=f)
+print(',',file=f)
+
 for a in dlastList:    
-    for i in range(1,count):
-        if a in dataDict[i]:
+    for i in range(1,8+1):
+        if i in dataDict and  a in dataDict[i]:
             print("{}".format(dataDict[i][a][1]),end=',',file=f)
         else:
             print('        ',end=',',file=f)
